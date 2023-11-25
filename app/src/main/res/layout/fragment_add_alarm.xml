@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.AddAlarmFragment">
+
+
+    <TextView
+        android:id="@+id/add_alarm_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_alignParentLeft="true"
+        android:text="21:34"
+        android:textSize="30dp"
+        android:paddingLeft="50dp"/>
+
+    <Button
+        android:id="@+id/set_time_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="50dp"
+        android:text="Set time"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/add_alarm_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/add_alarm_time"
+
+        android:hint="Alarm note"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_alarm_sound"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_alarm_message"
+        android:layout_marginHorizontal="30dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="select sound"
+            android:inputType="none"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <Button
+        android:id="@+id/save_alarm_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Save"
+        android:textSize="30dp"
+
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"/>
+
+</RelativeLayout>

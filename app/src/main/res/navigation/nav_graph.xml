@@ -1,0 +1,38 @@
+<!-- nav_graph.xml -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/alarmsFragment">
+
+    <fragment
+        android:id="@+id/alarmsFragment"
+        android:name="com.example.alarmapp2.fragment.AlarmsFragment"
+        android:label="fragment_alarms"
+        tools:layout="@layout/fragment_alarms" >
+
+        <!-- Define action to navigate from AlarmsFragment to AddAlarmFragment -->
+        <action
+            android:id="@+id/action_alarmsFragment_to_addAlarmFragment"
+            app:destination="@id/addAlarmFragment">
+            <argument
+                android:name="alarmId"
+                app:argType="integer"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAlarmFragment"
+        android:name="com.example.alarmapp2.fragment.AddAlarmFragment"
+        android:label="fragment_add_alarm"
+        tools:layout="@layout/fragment_add_alarm" >
+
+        <!-- Define action to navigate from AddAlarmFragment to AlarmsFragment -->
+        <action
+            android:id="@+id/action_addAlarmFragment_to_alarmsFragment"
+            app:destination="@id/alarmsFragment"
+            app:popUpTo="@id/alarmsFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
