@@ -1,4 +1,4 @@
-package com.example.alarmapp2.fragment
+package com.example.alarmapp2.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.alarmapp2.AlarmAdapter
+import com.example.alarmapp2.adapter.AlarmAdapter
 import com.example.alarmapp2.AlarmApplication
-import com.example.alarmapp2.AlarmViewModel
-import com.example.alarmapp2.AlarmViewModelFactory
+import com.example.alarmapp2.viewmodel.AlarmViewModel
+import com.example.alarmapp2.viewmodel.AlarmViewModelFactory
 import com.example.alarmapp2.databinding.FragmentAlarmsBinding
 
 class AlarmsFragment : Fragment() {

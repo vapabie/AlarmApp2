@@ -1,4 +1,4 @@
-package com.example.alarmapp2
+package com.example.alarmapp2.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

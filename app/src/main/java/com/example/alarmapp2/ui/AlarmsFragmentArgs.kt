@@ -1,4 +1,4 @@
-package com.example.alarmapp2.fragment
+package com.example.alarmapp2.ui
 
 import android.os.Bundle
 import androidx.navigation.NavArgs

@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/alarmsFragment"
-        android:name="com.example.alarmapp2.fragment.AlarmsFragment"
+        android:name="com.example.alarmapp2.ui.AlarmsFragment"
         android:label="fragment_alarms"
         tools:layout="@layout/fragment_alarms" >
 
@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/addAlarmFragment"
-        android:name="com.example.alarmapp2.fragment.AddAlarmFragment"
+        android:name="com.example.alarmapp2.ui.AddAlarmFragment"
         android:label="fragment_add_alarm"
         tools:layout="@layout/fragment_add_alarm" >
 

@@ -1,4 +1,4 @@
-package com.example.alarmapp2
+package com.example.alarmapp2.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

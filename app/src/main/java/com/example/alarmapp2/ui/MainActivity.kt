@@ -1,9 +1,10 @@
-package com.example.alarmapp2
+package com.example.alarmapp2.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.example.alarmapp2.R
 
 class MainActivity : AppCompatActivity() {
 
