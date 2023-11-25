@@ -1,5 +1,6 @@
 package com.example.alarmapp2.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -25,4 +26,10 @@ interface AlarmDao {
 
     @Delete
     suspend fun delete(alarm: Alarm)
+
+    @Query("select * from sound_table order by title asc")
+    fun getSounds(): LiveData<List<Alarm>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(sound: List<Alarm>)
 }
