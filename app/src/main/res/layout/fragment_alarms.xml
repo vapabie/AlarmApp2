@@ -6,14 +6,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.AlarmsFragment">
 
+    <TextView
+        android:layout_height="wrap_content"
+        android:id="@+id/alarm_header"
+        style="@style/Widget.Inventory.Header"
+        android:layout_marginStart="8dp"
+        android:text="Alarms"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:id="@+id/divider"
+        style="@style/Divider"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_header" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/alarm_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_button"
@@ -30,16 +48,19 @@
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/delete_button"
+        android:id="@+id/sounds_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_input_delete"
-        android:contentDescription="Delete Alarm"
+        app:srcCompat="@drawable/baseline_library_music_24"
+        android:contentDescription="Sound Library"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/add_button"
+        app:layout_constraintEnd_toEndOf="parent"
 
         android:layout_marginBottom="10dp"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginEnd="10dp"/>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

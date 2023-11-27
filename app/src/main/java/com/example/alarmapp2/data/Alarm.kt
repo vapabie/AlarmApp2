@@ -19,9 +19,7 @@ data class Alarm(
 
 @Entity(tableName = "sound_table")
 data class Sound(
-    @PrimaryKey(autoGenerate = true)
-    val soundId: Int = 0,
-    @ColumnInfo(name ="url")
+    @PrimaryKey
     val soundUrl: String,
     @ColumnInfo(name ="title")
     val soundTitle: String,

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AlarmDetailsFragment">
+
+    <TextView
+        android:id="@+id/settimetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="Alarm's set time: "
+        android:textStyle="bold"
+        android:layout_toLeftOf="@id/alarm_time"
+        android:layout_margin="30dp"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@id/alarm_time"/>
+    <TextView
+        android:id="@+id/alarm_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="21:34"
+        android:textSize="30dp"
+        android:paddingRight="50dp"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/setmessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alarm's note:"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_margin="30dp"
+        android:layout_below="@id/settimetext"/>
+
+    <EditText
+        android:id="@+id/alarm_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/setmessage"
+
+        android:hint="Alarm note"
+        android:inputType="none"/>
+
+    <TextView
+        android:id="@+id/setsound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alarm's sound:"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_margin="30dp"
+        android:layout_below="@id/alarm_message"/>
+
+    <TextView
+        android:id="@+id/alarm_sound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/setsound"
+
+        android:hint="Alarm note"
+        android:textSize="20dp"/>
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Delete"
+        android:textSize="20dp"
+        android:layout_margin="30dp"/>
+
+    <Button
+        android:id="@+id/edit_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="  Edit  "
+        android:textSize="20dp"
+        android:layout_margin="30dp"/>
+
+
+</RelativeLayout>

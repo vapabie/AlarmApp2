@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.alarmapp2.R
+import com.example.alarmapp2.repository.SoundRepository
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         // setupActionBarWithNavController(navController)
+
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

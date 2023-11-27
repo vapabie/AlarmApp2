@@ -3,6 +3,7 @@ package com.example.alarmapp2
 import android.app.Application
 import androidx.room.Room
 import com.example.alarmapp2.data.AlarmRoomDatabase
+import com.example.alarmapp2.repository.SoundRepository
 
 class AlarmApplication : Application() {
 
@@ -14,6 +15,12 @@ class AlarmApplication : Application() {
             "alarm_database"
         ).build()
     }
+
+    val soundRepository: SoundRepository
+        get() = SoundRepository(database.soundDao())
+
+
+
 
     override fun onCreate() {
         super.onCreate()

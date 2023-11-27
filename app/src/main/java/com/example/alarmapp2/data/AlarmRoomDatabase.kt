@@ -10,9 +10,10 @@ import java.time.LocalDateTime
 import java.time.ZoneOffset
 
 @TypeConverters(Converters::class)
-@Database(entities = [Alarm::class, Sound::class], version = 1, exportSchema = false)
+@Database(entities = [Alarm::class, Sound::class], version = 3, exportSchema = false)
 abstract class AlarmRoomDatabase : RoomDatabase() {
     abstract fun alarmDao(): AlarmDao
+    abstract fun soundDao(): SoundDao
 
     companion object {
         @Volatile

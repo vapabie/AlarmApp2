@@ -25,14 +25,15 @@ class AlarmViewModel(private val alarmDao: AlarmDao) : ViewModel() {
             alarmId,
             alarmTime,
             alarmMessage,
-            alarmSound)
+            alarmSound
+        )
 
         updateAlarm(updatedAlarm)
     }
 
 
     fun updateAlarm(alarm: Alarm){
-        viewModelScope.launch { alarmDao.update(alarm) }
+        viewModelScope.launch { alarmDao.updateAlarm(alarm) }
     }
     private fun getUpdatedAlarmEntry(
         alarmId: Int,
@@ -51,7 +52,8 @@ class AlarmViewModel(private val alarmDao: AlarmDao) : ViewModel() {
     fun addNewAlarm(
         alarmTime: LocalDateTime,
         alarmMessage: String,
-        alarmSound: String){
+        alarmSound: String
+    ){
         val newAlarm = getNewAlarmEntry(alarmTime, alarmMessage, alarmSound)
         insertAlarm(newAlarm)
     }
@@ -69,11 +71,11 @@ class AlarmViewModel(private val alarmDao: AlarmDao) : ViewModel() {
     }
 
     private fun insertAlarm(alarm: Alarm) {
-        viewModelScope.launch { alarmDao.insert(alarm) }
+        viewModelScope.launch { alarmDao.insertAlarm(alarm) }
     }
 
     fun deleteAlarm(alarm: Alarm){
-        viewModelScope.launch { alarmDao.delete(alarm) }
+        viewModelScope.launch { alarmDao.deleteAlarm(alarm) }
     }
 
     fun isEntryValid( alarmMessage: String, alarmSound: String

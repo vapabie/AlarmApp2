@@ -15,11 +15,14 @@
         <!-- Define action to navigate from AlarmsFragment to AddAlarmFragment -->
         <action
             android:id="@+id/action_alarmsFragment_to_addAlarmFragment"
-            app:destination="@id/addAlarmFragment">
-            <argument
-                android:name="alarmId"
-                app:argType="integer"/>
-        </action>
+            app:destination="@id/addAlarmFragment"/>
+        <action
+            android:id="@+id/action_alarmsFragment_to_soundFragment"
+            app:destination="@id/soundFragment" />
+        <action
+            android:id="@+id/action_alarmsFragment_to_alarmDetailsFragment"
+            app:destination="@id/alarmDetailsFragment" />
+
     </fragment>
 
     <fragment
@@ -28,11 +31,34 @@
         android:label="fragment_add_alarm"
         tools:layout="@layout/fragment_add_alarm" >
 
-        <!-- Define action to navigate from AddAlarmFragment to AlarmsFragment -->
+        <argument
+            android:name="alarm_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
         <action
             android:id="@+id/action_addAlarmFragment_to_alarmsFragment"
             app:destination="@id/alarmsFragment"
             app:popUpTo="@id/alarmsFragment"
             app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/soundFragment"
+        android:name="com.example.alarmapp2.ui.SoundFragment"
+        android:label="fragment_sound"
+        tools:layout="@layout/fragment_sound" />
+
+    <fragment
+        android:id="@+id/alarmDetailsFragment"
+        android:name="com.example.alarmapp2.ui.AlarmDetailsFragment"
+        android:label="fragment_alarm_details"
+        tools:layout="@layout/fragment_alarm_details" >
+        <argument
+            android:name="alarm_id"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_alarmDetailsFragment_to_addAlarmFragment"
+            app:destination="@id/addAlarmFragment" />
+
     </fragment>
 </navigation>

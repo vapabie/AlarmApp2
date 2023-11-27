@@ -1,6 +1,7 @@
 package com.example.alarmapp2.data
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.LiveDataScope
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -19,17 +20,25 @@ interface AlarmDao {
     fun getAlarm(id:Int): Flow<Alarm>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(alarm: Alarm)
+    suspend fun insertAlarm(alarm: Alarm)
 
     @Update
-    suspend fun update(alarm: Alarm)
+    suspend fun updateAlarm(alarm: Alarm)
 
     @Delete
-    suspend fun delete(alarm: Alarm)
+    suspend fun deleteAlarm(alarm: Alarm)
 
+
+}
+
+@Dao
+interface SoundDao{
     @Query("select * from sound_table order by title asc")
-    fun getSounds(): LiveData<List<Alarm>>
+    fun getSounds(): LiveData<List<Sound>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(sound: List<Alarm>)
+    fun insertSound(sound: Sound)
+
+
+
 }

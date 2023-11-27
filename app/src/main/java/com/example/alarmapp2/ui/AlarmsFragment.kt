@@ -36,10 +36,10 @@ class AlarmsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = AlarmAdapter { clickedAlarm ->
+        val adapter = AlarmAdapter {
             val action =
-                AlarmsFragmentDirections.actionAlarmsFragmentToAddAlarmFragment(id)
-            findNavController().navigate(action)
+                AlarmsFragmentDirections.actionAlarmsFragmentToAlarmDetailsFragment(it.id)
+            this.findNavController().navigate(action)
         }
 
         binding.alarmList.layoutManager = LinearLayoutManager(this.context)
@@ -50,7 +50,11 @@ class AlarmsFragment : Fragment() {
         }
 
         binding.addButton.setOnClickListener{
-            val action = AlarmsFragmentDirections.actionAlarmsFragmentToAddAlarmFragment(id)
+            val action = AlarmsFragmentDirections.actionAlarmsFragmentToAddAlarmFragment()
+            this.findNavController().navigate(action)
+        }
+        binding.soundsButton.setOnClickListener{
+            val action = AlarmsFragmentDirections.actionAlarmsFragmentToSoundFragment()
             this.findNavController().navigate(action)
         }
     }
